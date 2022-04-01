@@ -1,1 +1,3 @@
 # Laravel
+
+Repositorio de proyectos con el _framework Laravel_, manuales, fundamentos, guías de aprendizaje ...
