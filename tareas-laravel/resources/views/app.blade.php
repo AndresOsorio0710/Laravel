@@ -18,7 +18,7 @@
         </a></h1>
       </div>
       <ul>
-        <li><a href="#">Tareas</a></li>
+        <li><a href="{{ route('tareas') }}">Tareas</a></li>
         <li><a href="#">Categorias</a></li>
       </ul>
     </nav>

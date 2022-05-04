@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Tarea;
+use Illuminate\Http\Request;
 
 class TareaController extends Controller
 {
@@ -36,8 +36,38 @@ class TareaController extends Controller
         return redirect()->route('tareas')->with('success','Tarea creada correctamente');
      }
 
+     /**
+      * 
+      */
      public function index(){
          $tareas = Tarea::all();
          return view('tareas.index',['tareas'=>$tareas]);
      }
+
+     /**
+      * 
+      */
+    public function show($id){
+        $tarea = Tarea::find($id);
+        return view('tareas.show',['tarea'=>$tarea]);
+    }
+
+     /**
+      * 
+      */
+    public function update(Request $request,$id){
+        $tarea = Tarea::find($id);
+        $tarea->title = $request->title;
+        $tarea->save();
+        return redirect()->route('tareas')->with('success','Tarea actualizada correctamente');
+    }
+
+    /**
+     * 
+     */
+   public function destroy($id){
+       $tarea = Tarea::find($id);
+       $tarea->delete();
+       return redirect()->route('tareas')->with('success','Tarea eliminada correctamente');       
+   }
 }

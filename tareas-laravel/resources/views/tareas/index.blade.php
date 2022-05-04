@@ -19,8 +19,17 @@
   </form>
   <div>
     @foreach($tareas as $tarea)
-    <div>
-      <a href="">{{$tarea->title}}</a>
+    <div class="task">
+      <div class="col-1">
+      <a href="{{ route('tareas-show', ['id'=>$tarea->id]) }}">{{$tarea->title}}</a>
+      </div>
+      <div class="col-2">
+        <form action="{{ route('tareas-destroy', ['id'=>$tarea->id]) }}" method="POST">
+          @method('DELETE')
+          @csrf
+          <button>Eliminar</button>
+        </form>
+      </div>      
     </div>
     @endforeach
   </div>
