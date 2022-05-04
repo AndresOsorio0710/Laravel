@@ -1,0 +1,7 @@
+php artisan make:controller RegisterController
+php artisan make:controller SessionsController
+php artisan make:model Account -m
+php artisan make:controller AccountController
+php artisan make:controller TransactionController
+php artisan make:controller TransactionOwnAccountController
+php artisan make:controller TransactionOtherAccountController
